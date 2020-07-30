@@ -1,9 +1,14 @@
 # Git 指令集
 
+## 基础
+
 - `git status` 查看状态
 - `git diff readme.md`直接列举出两个不一样的地方
 - `git add readme.md`添加到队列等待提交
 - `git commit -m "xxx"`提交
+
+## 查看或者回退
+
 - `git log`用于查看commit的历史
 
 ![image-20200730221932569](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730221932569.png)
@@ -33,4 +38,10 @@
 ![image-20200730231531063](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730231531063.png)
 
 - `git`处理顺序是第一次修改 -> `git add` -> 第二次修改 -> `git add` -> `git commit`
+
+- `git status`查看状态信息后，对于不想要的更改，可以用`git checkout -- filename`
+
+- `git rm filename` ：对于以及add 和commit的文件，可以使用这个命令来进行删除，最后还需要commit一下
+
+## 远程仓库
 
