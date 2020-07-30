@@ -4,3 +4,20 @@
 - `git diff readme.md`直接列举出两个不一样的地方
 - `git add readme.md`添加到队列等待提交
 - `git commit -m "xxx"`提交
+- `git log`用于查看commit的历史
+
+![image-20200730221932569](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730221932569.png)
+
+> 可以使用`git log --pretty=oneline`来进行紧凑显示
+
+- `git reset --hard HEAD^`版本回退HEAD\^是上一个版本，\^\^是上上个版本，前一百个版本是HEAD~100
+
+![image-20200730222735391](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222735391.png)
+
+![image-20200730222744716](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222744716.png)
+
+- `git reset --hard  版本号`这个可以使得版本回退
+
+![image-20200730222906811](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222906811.png)
+
+> 版本号可以使用`git reflog`查看
