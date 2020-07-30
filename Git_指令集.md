@@ -21,3 +21,16 @@
 ![image-20200730222906811](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222906811.png)
 
 > 版本号可以使用`git reflog`查看
+
+- Git分为三个，工作区，缓冲区，分支，
+
+> 添加一个文件是在工作区
+>
+> `git add` 之后是在缓冲区
+>
+> `git commit`之后到了分支
+
+![image-20200730231531063](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730231531063.png)
+
+- `git`处理顺序是第一次修改 -> `git add` -> 第二次修改 -> `git add` -> `git commit`
+
