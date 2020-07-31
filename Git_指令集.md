@@ -140,4 +140,10 @@
 - `git stash list`显示所有的stash
 
 - 已经提交的分支，强制删除使用`git branch -D xxx`
-- 
+
+### 协作开发
+
+- 使用`git push origin branchname`推送自己的分支
+- 如过失败，则代表上面的更新，需要使用`git pull`从上面获取最新的，再手动合并冲突再使用git push
+
+> 如果`git pull`提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream-to  origin/`。
