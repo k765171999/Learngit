@@ -16,5 +16,6 @@ Creating a new branch is quick and simple.
 new no-ff
 git is a free
 git test merge
+2
 ```
 
