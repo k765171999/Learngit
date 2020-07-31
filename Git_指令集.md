@@ -45,3 +45,13 @@
 
 ## 远程仓库
 
+- `ssh-keygen -t rsa -C youremail`: 用于产生两个ssh keys分别为私有的和共有的
+
+![image-20200731081838927](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731081838927.png)
+
+- 找到生成的ssh文件，打开GitHub->setting->ssh keys->news ssh key，复制id_rsa.pub到里面，完成添加
+
+- `git remote add origin git@github.com:yourname/responame `: 将这个本地仓库关联到GIthub上面的仓库。
+- `git push -u origin master`: 把本地的文件推送到仓库的master分支中。之后就可以直接使用`git push origin master`完成推送
+- `git clone git@github.com:yourname/responame`：使用这个命令可以克隆仓库有，此外也可以使用https地址
+- `rm -rf 文件夹名字`：一般使用rm filename删除文件，但是对于文件夹这样不行，要使用-rf-r代表向下递归，-f代表强制删除
