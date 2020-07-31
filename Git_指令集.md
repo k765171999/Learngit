@@ -147,3 +147,55 @@
 - 如过失败，则代表上面的更新，需要使用`git pull`从上面获取最新的，再手动合并冲突再使用git push
 
 > 如果`git pull`提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream-to  origin/`。
+
+## 标签管理
+
+### 创建标签
+
+- `git tag v1.0`可以为当前版本添加标签
+- 对于以前的提交的版本，可以使用`git tag v0.9 commitNUMber`进行创建
+- `git tag`可以查看所有tag
+- `git show tagID`可以展现改tag的详情信息
+- `git tag -d tagId`删除
+- `git tag -a v0.1 -m "comment" commitID`创建tag并且带有说明
+
+### 操作标签
+
+- `git push origin tagID`可以把指定版本发布到GIthub
+- `git push origin --tags`推送全部标签
+- 对与云端的tag删除，首先删除本地的，然后`git push origin :refs/tags/tagID`
+
+## 自定义Git
+
+### 忽略特殊文件
+
+在进行使用git的时候，每当你添加一个文件他就提醒你，什么文件又untrack了，有点烦，解决方法是配置.gitignore文件，在这个文件中进行指定文件的格式，或者指定文件夹名字，进行忽略
+
+- 首先`touch .gitignore`创建该文件，下一步，进行配置
+
+```
+# ignore all .a files
+*.a
+
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+
+# ignore all files in any directory named build
+build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
+```
+
+- 具体需求，具体分析，配置好了之后，add+commit
+
+- 这时候就完成创建了，但是当需要添加一个ignore文件的时候，会报错
+- `git add app.class`，配置中又\*.class ，所以会被忽略，无法添加，这个时候要强制添加使用`git add -f app.class`
+- `git check-ignore -v app.class`可以查看是属于哪一种ignore类型
+- 
