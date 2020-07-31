@@ -198,4 +198,17 @@ doc/**/*.pdf
 - 这时候就完成创建了，但是当需要添加一个ignore文件的时候，会报错
 - `git add app.class`，配置中又\*.class ，所以会被忽略，无法添加，这个时候要强制添加使用`git add -f app.class`
 - `git check-ignore -v app.class`可以查看是属于哪一种ignore类型
-- 
+
+### 配置别名
+
+例如`git status`可以直接写成`git st`
+
+- `git config --global alias.st status`就可以了
+
+- `git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"`高端用法
+
+- `cat .git/config`可以查看配置文件，删除其中[alias]下面的别名就可以删除了
+
+  
+
+  
