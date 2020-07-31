@@ -2,6 +2,7 @@
 
 ## 基础
 
+- `git init`把这个位置创建为版本库
 - `git status` 查看状态
 - `git diff readme.md`直接列举出两个不一样的地方
 - `git add readme.md`添加到队列等待提交
@@ -11,19 +12,19 @@
 
 - `git log`用于查看commit的历史
 
-![image-20200730221932569](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730221932569.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730221932569.png" alt="image-20200730221932569" style="zoom: 50%;" />
 
 > 可以使用`git log --pretty=oneline`来进行紧凑显示
 
 - `git reset --hard HEAD^`版本回退HEAD\^是上一个版本，\^\^是上上个版本，前一百个版本是HEAD~100
 
-![image-20200730222735391](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222735391.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222735391.png" alt="image-20200730222735391" style="zoom:50%;" />
 
-![image-20200730222744716](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222744716.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222744716.png" alt="image-20200730222744716" style="zoom:50%;" />
 
 - `git reset --hard  版本号`这个可以使得版本回退
 
-![image-20200730222906811](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222906811.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730222906811.png" alt="image-20200730222906811" style="zoom:50%;" />
 
 > 版本号可以使用`git reflog`查看
 
@@ -35,7 +36,7 @@
 >
 > `git commit`之后到了分支
 
-![image-20200730231531063](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730231531063.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200730231531063.png" alt="image-20200730231531063" style="zoom:50%;" />
 
 - `git`处理顺序是第一次修改 -> `git add` -> 第二次修改 -> `git add` -> `git commit`
 
@@ -47,7 +48,7 @@
 
 - `ssh-keygen -t rsa -C youremail`: 用于产生两个ssh keys分别为私有的和共有的
 
-![image-20200731081838927](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731081838927.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731081838927.png" alt="image-20200731081838927" style="zoom:50%;" />
 
 - 找到生成的ssh文件，打开GitHub->setting->ssh keys->news ssh key，复制id_rsa.pub到里面，完成添加
 
@@ -62,11 +63,11 @@
 
 - `git switch -c dev = git checkout -b dev = git branch dev+git checkout dev`：用于创建分支并且转到这个分支上，分支工作原理如下：
 
-![image-20200731084740274](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731084740274.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731084740274.png" alt="image-20200731084740274" style="zoom:50%;" />
 
-![image-20200731084752454](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731084752454.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731084752454.png" alt="image-20200731084752454" style="zoom:50%;" />
 
-![image-20200731084759758](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731084759758.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731084759758.png" alt="image-20200731084759758" style="zoom:50%;" />
 
 - 当这个时候我们切换分支会发现，在dev中改变的东西被删除了
 
@@ -74,7 +75,7 @@
 
 - 对他们进行合并，删除dev
 
-![image-20200731084858005](C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731084858005.png)
+<img src="C:\Users\LvGJ\AppData\Roaming\Typora\typora-user-images\image-20200731084858005.png" alt="image-20200731084858005" style="zoom:50%;" />
 
 - `git branch`可以查看有哪些分支
 
