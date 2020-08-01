@@ -233,3 +233,72 @@ docker run --rm -it \
 
 ## 使用网络
 
+### 外部访问容器
+
+容器中可以运行一些网络应用，要让外部也可以访问这些应用，可以通过 `-P` 或 `-p` 参数来指定端口映射。
+
+```
+docker run -d -P training/webapp python app.py
+// -P自动分配端口映射到容器的5000端口
+
+docker logs -f ID
+// 可以查看端口信息
+```
+
+### 映射所有接口地址
+
+`-p` 则可以指定要映射的端口，并且，在一个指定端口上只可以绑定一个容器。使用 `hostPort:containerPort` 格式本地的 5000 端口映射到容器的 5000 端口
+
+```
+docker run -d -p 5000:5000 training/webapp python app.py
+```
+
+### 映射到指定地址的指定端口
+
+可以使用 `ip:hostPort:containerPort` 格式指定映射使用一个特定地址
+
+```
+docker run -d -p 127.0.0.1:5000:5000 training/webapp python app.py
+```
+
+###  映射到指定地址的任意端口
+
+使用 `ip::containerPort` 绑定 localhost 的任意端口到容器的 5000 端口，本地主机会自动分配一个端口。
+
+```
+docker run -d -p 127.0.0.1::5000 training/webapp python app.py
+
+docker run -d -p 127.0.0.1:5000:5000/udp training/webapp python app.py
+```
+
+###  查看映射端口配置
+
+```
+docker port nostalgic_morse 5000
+```
+
+## 容器互联
+
+随着 Docker 网络的完善，强烈建议大家将容器加入自定义的 Docker 网络来连接多个容器，而不是使用 `--link` 参数。
+
+首先新建网络`docker network create -d bridge my-net`
+
+- `-d` 参数指定 Docker 网络类型，有 `bridge` `overlay`。其中 `overlay` 网络类型用于 [Swarm mode](https://vuepress.mirror.docker-practice.com/swarm_mode/)
+
+连接容器，运行两个容器，并且都链接到网络上
+
+```
+docker run -it --rm --name busybox1 --network my-net busybox sh
+
+docker run -it --rm --name busybox2 --network my-net busybox sh
+// 打开一个新终端
+
+docker container ls
+// 再打开一个新的终端查看容器信息
+
+ping busybox2
+// 在busybox1中ping busybox2
+
+ping busybox1
+// 在busybox2中ping busybox1 可以看出实现互联了
+```
