@@ -212,4 +212,7 @@ doc/**/*.pdf
 
   
 
-  
+## addtion
+
+- `git remote -v`查看远端库信息
+
